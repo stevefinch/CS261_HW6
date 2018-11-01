@@ -51,6 +51,15 @@ class TestBinarySearchTree(unittest.TestCase):
                 node_to_find = child
         self.assertEqual(bst.find(values[5]), node_to_find)            
 
+    def test_find_unsuccesful(self):
+        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
+        bst = BinarySearchTree()
+        for i in values:
+            child = BinarySearchTree(i)
+            bst.insert(child)
+        self.assertEqual(bst.find(0), None)            
+
+
     # def test_in_order(self):
     #     values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
     #     bst = BinarySearchTree()
