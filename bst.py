@@ -32,3 +32,15 @@ class BinarySearchTree:
             else:    
                 return self.right.find(value)
 
+    def in_order(self):
+        answer = []    
+        if self.left != None:
+            answer.extend(self.left.in_order())    
+
+        answer.append(self.value)
+
+        if self.right != None:
+            answer.extend(self.right.in_order())    
+
+        return answer
+

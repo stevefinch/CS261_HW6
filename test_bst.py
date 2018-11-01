@@ -59,26 +59,26 @@ class TestBinarySearchTree(unittest.TestCase):
             bst.insert(child)
         self.assertEqual(bst.find(0), None)            
 
-    # def test_in_order(self):
-    #     values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
-    #     bst = BinarySearchTree()
-    #     for i in values:
-    #         bst.insert(BinarySearchTree(i))
-    #     self.assertEqual(bst.in_order(), [21, 73, 14, 83, 67,23, 99, 104, 18,1].sort())                
+    def test_in_order(self):
+        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
+        bst = BinarySearchTree()
+        for i in values:
+            bst.insert(BinarySearchTree(i))
+        self.assertEqual(bst.in_order(), [1, 14, 18, 21, 23, 67, 73, 83, 99, 104])                
 
-    # def test_pre_order(self):
-    #     values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
-    #     bst = BinarySearchTree()
-    #     for i in values:
-    #         bst.insert(BinarySearchTree(i))
-    #     self.assertEqual(bst.pre_order(), [21, 14, 1, 18, 73, 67, 23, 83, 99, 104])                
+    def test_pre_order(self):
+        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
+        bst = BinarySearchTree()
+        for i in values:
+            bst.insert(BinarySearchTree(i))
+        self.assertEqual(bst.pre_order(), [21, 14, 1, 18, 73, 67, 23, 83, 99, 104])                
 
     # def test_post_order(self):
     #     values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
     #     bst = BinarySearchTree()
     #     for i in values:
     #         bst.insert(BinarySearchTree(i))
-    #     self.assertEqual(bst.post_order(), [1, 18, 14, 23, 67, 83, 99, 104, 73, 21])                
+    #     self.assertEqual(bst.post_order(), [1, 18, 14, 23, 67, 104, 99, 83, 73, 21])                
 
 if __name__ == '__main__':
     unittest.main()
