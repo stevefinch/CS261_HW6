@@ -74,9 +74,16 @@ class BinarySearchTree:
         return answer
 
     def delete(self):
-        if self == None:
-            return
-        if self.parent.left == self:
-            self.parent.left = None
-        else:
-            self.parent.right = None
+        i_am_left_child = self.parent.left == self 
+        i_am_leaf = self.left == None and self.right == None
+        i_am_only_child = self.parent.left == None or self.parent.right == None
+       
+        if i_am_leaf:
+            if i_am_left_child:
+                self.parent.left = None
+            else:
+                self.parent.right = None
+
+        elif i_am_only_child:        
+            self.parent.left = self.left
+            self.parent.right = self.right
