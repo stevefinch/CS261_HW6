@@ -80,6 +80,14 @@ class TestBinarySearchTree(unittest.TestCase):
             bst.insert(BinarySearchTree(i))
         self.assertEqual(bst.post_order(), [1, 18, 14, 23, 67, 104, 99, 83, 73, 21])                
 
+    def test_delete_leaf(self):
+        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
+        bst = BinarySearchTree()
+        for i in values:
+            bst.insert(BinarySearchTree(i))
+        bst.find(18).delete()
+        self.assertEqual(bst.in_order(), [1, 14, 21, 23, 67, 73, 83, 99, 104])                
+
 if __name__ == '__main__':
     unittest.main()
             

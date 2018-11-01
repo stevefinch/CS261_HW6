@@ -72,3 +72,11 @@ class BinarySearchTree:
         answer.append(self.value)
 
         return answer
+
+    def delete(self):
+        if self == None:
+            return
+        if self.parent.left == self:
+            self.parent.left = None
+        else:
+            self.parent.right = None
