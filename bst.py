@@ -44,3 +44,28 @@ class BinarySearchTree:
 
         return answer
 
+    def pre_order(self):
+        answer = []    
+
+        answer.append(self.value)
+
+        if self.left != None:
+            answer.extend(self.left.pre_order())    
+
+        if self.right != None:
+            answer.extend(self.right.pre_order())    
+
+        return answer
+
+    def post_order(self):
+        answer = []    
+
+        if self.left != None:
+            answer.extend(self.left.post_order())    
+
+        if self.right != None:
+            answer.extend(self.right.post_order())    
+
+        answer.append(self.value)
+
+        return answer
