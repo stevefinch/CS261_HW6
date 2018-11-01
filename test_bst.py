@@ -15,10 +15,11 @@ class TestBinarySearchTree(unittest.TestCase):
          bst = BinarySearchTree(fake_value)
          self.assertEqual(bst.value, fake_value)
 
-    # def test_insert_to_root_lesser(self):
-    #     bst = BinarySearchTree(55)
-    #     child = BinarySearchTree(25)
-    #     self.assertEqual(bst.left, child)
+    def test_insert_to_root_lesser(self):
+        bst = BinarySearchTree(55)
+        child = BinarySearchTree(25)
+        bst.insert(child)
+        self.assertEqual(bst.left, child)
 
     # def test_insert_to_root_lesser(self):
     #     bst = BinarySearchTree(55)
