@@ -21,19 +21,19 @@ class TestBinarySearchTree(unittest.TestCase):
         bst.insert(child)
         self.assertEqual(bst.left, child)
 
-    # def test_insert_to_root_lesser(self):
-    #     bst = BinarySearchTree(55)
-    #     child = BinarySearchTree(75)
-    #     bst.insert(child)
-    #     self.assertEqual(bst.right, child)
+    def test_insert_to_root_greater(self):
+        bst = BinarySearchTree(55)
+        child = BinarySearchTree(75)
+        bst.insert(child)
+        self.assertEqual(bst.right, child)
 
-    # def test_insert_to_child_lesser(self):
-    #     bst = BinarySearchTree(55)
-    #     child1 = BinarySearchTree(25)
-    #     child2 = BinarySearchTree(15)
-    #     bst.insert(child1)
-    #     bst.insert(child2)
-    #     self.assertEqual(child1.left, child2)
+    def test_insert_to_child_lesser(self):
+        bst = BinarySearchTree(55)
+        child1 = BinarySearchTree(25)
+        child2 = BinarySearchTree(15)
+        bst.insert(child1)
+        bst.insert(child2)
+        self.assertEqual(child1.left, child2)
 
     # def test_find(self):
     #     values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
