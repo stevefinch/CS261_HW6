@@ -59,7 +59,6 @@ class TestBinarySearchTree(unittest.TestCase):
             bst.insert(child)
         self.assertEqual(bst.find(0), None)            
 
-
     # def test_in_order(self):
     #     values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
     #     bst = BinarySearchTree()

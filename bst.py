@@ -21,14 +21,12 @@ class BinarySearchTree:
     def find(self, value):
         if value == self.value:
             return self
-
-        if value < self.value:
+        elif value < self.value:
             if self.left == None:
                 return None
             else:    
-                return self.left.find(value)
-        
-        if value > self.value:        
+                return self.left.find(value)      
+        elif value > self.value:        
             if self.right == None:
                 return None
             else:    
