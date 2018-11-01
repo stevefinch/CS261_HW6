@@ -7,8 +7,7 @@ class BinarySearchTree:
     def insert(self, child):
         if self.value == None:
             self.value = child.value
-
-        if child.value < self.value:
+        elif child.value < self.value:
             if self.left == None:
                 self.left = child
             else:
@@ -20,16 +19,16 @@ class BinarySearchTree:
                 self.right.insert(child)    
 
     def find(self, value):
-        if self.value == value:
+        if value == self.value:
             return self
 
-        if self.value < value:
+        if value < self.value:
             if self.left == None:
                 return None
             else:    
                 return self.left.find(value)
         
-        if self.value > value:        
+        if value > self.value:        
             if self.right == None:
                 return None
             else:    

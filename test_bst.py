@@ -15,6 +15,12 @@ class TestBinarySearchTree(unittest.TestCase):
          bst = BinarySearchTree(fake_value)
          self.assertEqual(bst.value, fake_value)
 
+    def test_insert_to_empty(self):
+        bst = BinarySearchTree()
+        child = BinarySearchTree(25)
+        bst.insert(child)
+        self.assertEqual(bst.value, child.value)
+
     def test_insert_to_root_lesser(self):
         bst = BinarySearchTree(55)
         child = BinarySearchTree(25)
@@ -35,15 +41,15 @@ class TestBinarySearchTree(unittest.TestCase):
         bst.insert(child2)
         self.assertEqual(child1.left, child2)
 
-    # def test_find(self):
-    #     values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
-    #     bst = BinarySearchTree()
-    #     for i in values:
-    #         child = BinarySearchTree(i)
-    #         bst.insert(child)
-    #         if i == values[5]:
-    #             node_to_find = child
-    #     self.assertEqual(bst.find(values[5]), node_to_find)            
+    def test_find_succesful(self):
+        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
+        bst = BinarySearchTree()
+        for i in values:
+            child = BinarySearchTree(i)
+            bst.insert(child)
+            if i == values[5]:
+                node_to_find = child
+        self.assertEqual(bst.find(values[5]), node_to_find)            
 
     # def test_in_order(self):
     #     values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
