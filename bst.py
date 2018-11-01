@@ -2,18 +2,21 @@ class BinarySearchTree:
     def __init__(self, value = None):
         self.value = value
         self.left = None
-        self.right = None        
+        self.right = None
+        self.parent = None        
 
     def insert(self, child):
         if self.value == None:
             self.value = child.value
         elif child.value < self.value:
             if self.left == None:
+                child.parent = self
                 self.left = child
             else:
                 self.left.insert(child)    
         else:
             if self.right == None:
+                child.parent = self
                 self.right = child
             else:
                 self.right.insert(child)    
