@@ -80,21 +80,59 @@ class TestBinarySearchTree(unittest.TestCase):
             bst.insert(BinarySearchTree(i))
         self.assertEqual(bst.post_order(), [1, 18, 14, 23, 67, 104, 99, 83, 73, 21])                
 
-    def test_delete_leaf(self):
-        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
+    def test_delete_leaf(self):        
+        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]
+        test_value = 18
+
         bst = BinarySearchTree()
+        bst_test = BinarySearchTree()
+
         for i in values:
             bst.insert(BinarySearchTree(i))
-        bst.find(18).delete()
-        self.assertEqual(bst.in_order(), [1, 14, 21, 23, 67, 73, 83, 99, 104])                
+        values.remove(test_value)
+        for i in values:
+            bst_test.insert(BinarySearchTree(i))
+
+        bst.find(test_value).delete()
+        self.assertEqual(bst.in_order(), bst_test.in_order())                
+        self.assertEqual(bst.post_order(), bst_test.post_order())                
+        self.assertEqual(bst.pre_order(), bst_test.pre_order())                
 
     def test_delete_one_child(self):
-        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]       
+        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]
+        test_value = 99
+
         bst = BinarySearchTree()
+        bst_test = BinarySearchTree()
+
         for i in values:
             bst.insert(BinarySearchTree(i))
-        bst.find(99).delete()
-        self.assertEqual(bst.in_order(), [1, 14, 18, 21, 23, 67, 73, 83, 104])                
+        values.remove(test_value)
+        for i in values:
+            bst_test.insert(BinarySearchTree(i))
+            
+        bst.find(test_value).delete()
+        self.assertEqual(bst.in_order(), bst_test.in_order())                
+        self.assertEqual(bst.post_order(), bst_test.post_order())                
+        self.assertEqual(bst.pre_order(), bst_test.pre_order())                
+
+    def test_delete_two_child(self):
+        values = [21, 73, 14, 83, 67,23, 99, 104, 18,1]
+        test_value = 73
+
+        bst = BinarySearchTree()
+        bst_test = BinarySearchTree()
+
+        for i in values:
+            bst.insert(BinarySearchTree(i))
+        values.remove(test_value)
+        for i in values:
+            bst_test.insert(BinarySearchTree(i))
+            
+        bst.find(test_value).delete()
+        self.assertEqual(bst.in_order(), bst_test.in_order())                
+        self.assertEqual(bst.post_order(), bst_test.post_order())                
+        self.assertEqual(bst.pre_order(), bst_test.pre_order())                
 
 if __name__ == '__main__':
     unittest.main()

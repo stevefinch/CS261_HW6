@@ -83,7 +83,23 @@ class BinarySearchTree:
                 self.parent.left = None
             else:
                 self.parent.right = None
-
-        elif i_am_only_child:        
+        elif i_am_only_child:
             self.parent.left = self.left
             self.parent.right = self.right
+            if self.left != None:
+                self.left.parent = self.parent
+            if self.right != None:
+                self.right.parent = self.parent
+
+        else:
+            if i_am_left_child:
+                self.parent.left = self.left
+                self.left.parent = self.parent
+                self.left.right = self.right
+                self.right.parent = self.left
+            else:
+                self.parent.right = self.right
+                self.right.parent = self.parent
+                self.right.left = self.left
+                self.left.parent = self.right
+
